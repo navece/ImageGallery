@@ -1,38 +1,173 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.body {
+  background-color: #f1faee;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: "Dancing Script", cursive;
+  margin-top: 30px;
+  font-size: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  vertical-align: middle;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
   }
-  to {
-    transform: rotate(360deg);
+  .modal-image .image {
+    height: 60vh !important;
   }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+  .modal-image .image {
+    height: 30vh !important;
+  }
+}
+
+.search-container {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+}
+
+.searchbar input {
+  border: none;
+  border-radius: 20px;
+  background-color: #ced4da;
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  height: 65%;
+  font-size: large;
+  outline: none;
+}
+
+.searchbar button {
+  background-color: #f4562a;
+  margin-left: 10px;
+  height: 80%;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  height: 60px;
+  width: 60px;
+  color: #f1faee;
+}
+
+.image-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-card img:hover {
+  opacity: 0.5;
+}
+
+.image-card img:hover + .details {
+  display: block;
+}
+
+.details {
+  position: absolute;
+  color: black;
+  top: 10px;
+  left: 10px;
+  display: none;
+}
+
+.card-name {
+  margin: 10px;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1;
+  padding: 20px;
+}
+
+.close-button {
+  top: 2px;
+  right: 15px;
+  position: fixed;
+  color: aliceblue;
+}
+
+.modal-container {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-image {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-image .image {
+  height: 85vh;
+}
+
+.modal-details {
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.modal-detail-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px;
+}
+
+.modal-detail-row span {
+  font-size: 20px;
+  margin-left: 10px;
 }
